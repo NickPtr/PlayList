@@ -7,6 +7,7 @@ public class Main
     public static void main(String[] args) 
     {
         int input;
+        PlayList pl = new PlayList();
         do{
         System.out.println("Lista epilogwn: ");
         System.out.println("1) Emfanisi olwn twn tragoudiwn tis listas");
@@ -20,7 +21,7 @@ public class Main
         System.out.print("Dwste tin epilogi sas: ");
         Scanner in = new Scanner(System.in);
         input = in.nextInt();
-        PlayList pl = new PlayList();
+        
         if(input==1)
         {
             pl.PrintAll();
@@ -42,15 +43,24 @@ public class Main
         }
         else if(input==5)
         {
-            
+            System.out.print("Dwste ton kalitexni pou epithimite na deite ta tragoudia tou: ");
+            Scanner in2 = new Scanner(System.in);
+            String input2 = in2.nextLine();
+            pl.SearchByArtist(input2);
         }
         else if(input==6)
         {
-            
+            System.out.print("Dwste ton album pou epithimite na deite ta tragoudia tou: ");
+            Scanner in2 = new Scanner(System.in);
+            String input2 = in2.nextLine();
+            pl.SearchByAlbum(input2);
         }
         else if(input==7)
         {
-            
+            System.out.print("Dwste ton titlo tou tragoudiou pou epithimite na diagrapsete apo tin play list: ");
+            Scanner in2 = new Scanner(System.in);
+            String input2 = in2.nextLine();
+            pl.Delete(input2);
         }
         else if(input==0)
         {

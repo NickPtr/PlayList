@@ -59,11 +59,9 @@ public class PlayList
     
     public void Fix(String title)
     {
-        String str2[]=new String[50];
         for(int i=0; i<songs.songlist.size();i++)
         {
             String splited[]=songs.songlist.get(i).split("\t\t");
-           // str2[i]=splited[0];
             if(title.equals(splited[0]))
             {
                 System.out.println("Ti allagi epithimite na kanenete?");
@@ -100,6 +98,52 @@ public class PlayList
             }
         }
         
+    }
+    
+    public void SearchByArtist(String artist)
+    {
+        System.out.println("Tragoudia tou kalitexni: "+artist);
+        System.out.println("\nTragoudi\t"+"Diarkeia\t"+"Album");
+        for(int i=0; i<songs.songlist.size();i++)
+        {
+            
+            String splited[]=songs.songlist.get(i).split("\t\t");
+            
+            if(artist.equals(splited[1]))
+            {
+                System.out.println(splited[0]+"\t\t"+splited[2]+"\t\t"+splited[3]);
+            }
+        }
+    }
+    
+    public void SearchByAlbum(String album)
+    {
+        System.out.println("Tragoudia tou album: "+album);
+        System.out.println("\nTragoudi\t"+"Kalitexnis\t"+"Diarkeia\t");
+        for(int i=0; i<songs.songlist.size();i++)
+        {
+            
+            String splited[]=songs.songlist.get(i).split("\t\t");
+            
+            if(album.equals(splited[3]))
+            {
+                System.out.println(splited[0]+"\t\t"+splited[1]+"\t\t"+splited[2]);
+            }
+        }
+    }
+    
+    public void Delete(String title)
+    {
+        for(int i=0; i<songs.songlist.size();i++)
+        {
+            
+            String splited[]=songs.songlist.get(i).split("\t\t");
+            
+            if(title.equals(splited[0]))
+            {
+                songs.songlist.remove(i);
+            }
+        }
     }
     
 }
